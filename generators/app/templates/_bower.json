@@ -1,0 +1,75 @@
+{
+  "name": "<%- appName %>",
+  "version": "0.0.0",
+  "dependencies": {
+<% if (includeModernizr) { -%>
+    "modernizr": "~2.8.3",
+<% } if (angularModulesObject.animate) { -%>
+    "angular-animate": "<%- props.angularVersion %>",
+<% } if (angularModulesObject.cookies) { -%>
+    "angular-cookies": "<%- props.angularVersion %>",
+<% } if (angularModulesObject.touch) { -%>
+    "angular-touch": "<%- props.angularVersion %>",
+<% } if (angularModulesObject.sanitize) { -%>
+    "angular-sanitize": "<%- props.angularVersion %>",
+<% } if (angularModulesObject.messages) { -%>
+    "angular-messages": "<%- props.angularVersion %>",
+<% } if (angularModulesObject.aria) { -%>
+    "angular-aria": "<%- props.angularVersion %>",
+<% } if (props.jQuery.key === 'jquery1') { -%>
+    "jquery": "~1.11.3",
+<% } if (props.jQuery.key === 'jquery2') { -%>
+    "jquery": "~2.1.4",
+<% } if (props.jQuery.key === 'zepto') { -%>
+    "zepto": "~1.1.6",
+<% } if (props.router.key === 'angular-route') { -%>
+    "angular-route": "<%- props.angularVersion %>",
+<% } if (props.router.key === 'ui-router') { -%>
+    "angular-ui-router": "~0.2.15",
+<% } if (props.router.key === 'new-router') { -%>
+    "angular-new-router": "~0.5.3",
+<% } if(props.ui.key === 'bootstrap') { -%>
+<%   if(props.cssPreprocessor.extension === 'scss') { -%>
+    "bootstrap-sass": "~3.3.5",
+<%   } else if(props.cssPreprocessor.extension === 'styl') { -%>
+    "bootstrap-stylus": "~4.0.4",
+<%   } else { -%>
+    "bootstrap": "~3.3.5",
+<%   } -%>
+<% } if(props.ui.key === 'foundation') { -%>
+    "foundation": "~5.5.2",
+<% } if(props.ui.key === 'angular-material') { -%>
+    "angular-material": "~0.11.2",
+    "material-design-iconfont": "~0.0.2",
+<% } if(props.ui.key === 'material-design-lite') { -%>
+    "material-design-lite": "~1.0.4",
+    "material-design-iconfont": "~0.0.2",
+<% } if(props.bootstrapComponents.key === 'ui-bootstrap') { -%>
+    "angular-bootstrap": "~0.14.3",
+<% } if(props.bootstrapComponents.key === 'angular-strap') { -%>
+    "angular-strap": "~2.3.1",
+<% } if(props.foundationComponents.key === 'angular-foundation') { -%>
+    "angular-foundation": "~0.6.0",
+<% } if(props.jsPreprocessor.key === 'traceur') { -%>
+    "traceur-runtime": "~0.0.90",
+<% } -%>
+    "angular-toastr": "~1.5.0",
+    "moment": "~2.10.6",
+    "animate.css": "~3.4.0",
+    "angular": "<%- props.angularVersion %>"
+  },
+  "devDependencies": {
+    "angular-mocks": "<%- props.angularVersion %>"
+  },
+<% if (bowerOverrides !== null) { -%>
+  "overrides": <%- bowerOverrides %>,
+<% } -%>
+  "resolutions": {
+<% if (props.jQuery.key === 'jquery1') { -%>
+    "jquery": "~1.11.3",
+<% } if (props.jQuery.key === 'jquery2') { -%>
+    "jquery": "~2.1.4",
+<% } -%>
+    "angular": "<%- props.angularVersion %>"
+  }
+}

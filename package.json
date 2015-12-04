@@ -1,0 +1,44 @@
+{
+  "name": "generator-gulp-angular-amd",
+  "version": "0.1.0",
+  "description": "Angular AMD app generator.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elesdoar/angular-amd-generator.git"
+  },
+  "files": [
+    "index.js",
+    "generators"
+  ],
+  "keywords": [
+    "angular",
+    "yo",
+    "generator",
+    "requirejs",
+    "amd",
+    "yeoman-generator"
+  ],
+  "author": "Michael Salgado <elesdoar@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elesdoar/angular-amd-generator/issues"
+  },
+  "homepage": "https://github.com/elesdoar/angular-amd-generator#readme",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "lodash": "^3.10.1",
+    "slash": "^1.0.0",
+    "underscore.string": "^3.2.2",
+    "yeoman-generator": "^0.21.1",
+    "yosay": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "bower": "^1.6.8",
+    "jshint": "^2.9.1-rc1"
+  }
+}

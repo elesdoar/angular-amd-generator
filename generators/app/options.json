@@ -1,0 +1,19 @@
+[{
+  "name": "app-path",
+  "type": "String",
+  "required": false,
+  "desc": "Angular app folder, relative to cwd",
+  "defaults": "src"
+}, {
+  "name" : "dist-path",
+  "type": "String",
+  "required": false,
+  "desc": "Build destination folder, relative to cwd",
+  "defaults": "webapp"
+}, {
+  "name": "e2e-path",
+  "type": "String",
+  "required": false,
+  "desc": "e2e test specs folder, relative to cwd",
+  "defaults": "tests/e2e"
+}]
