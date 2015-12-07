@@ -33,7 +33,7 @@ module.exports = function (GulpAngularAMDGenerator) {
       .replace(/\n/g, '\n    ');
 
     usedTechs.forEach(function (value) {
-      var path = 'src/assets/images/' + listTechs[value].logo;
+      var path = 'src/images/' + listTechs[value].logo;
 
       this.files.push({
         src: path,

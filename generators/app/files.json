@@ -7,15 +7,21 @@
     "gulp/e2e-tests.js",
 
     "src/favicon.ico",
-    "src/assets/images/yeoman.png"
+    "src/images/yeoman.png",
+    ".jshintrc"
   ],
 
   "templates": [
     ".gitignore",
-    "jshintrc",
 
     "package.json",
     "bower.json",
+    "README.md",
+
+    "gulp/conf.js",
+    "gulp/build.js",
+    "gulp/inject.js",
+    "gulp/styles.js",
 
     "karma.conf.js",
 

@@ -7,11 +7,12 @@ module.exports = function (GulpAngularAMDGenerator) {
    */
   GulpAngularAMDGenerator.prototype.uiFiles = function uiFiles() {
     this.files.push({
-      src: 'src/app/components/navbar/__' + this.props.ui.key + '-navbar.html',
-      dest: 'src/app/components/navbar/navbar.html',
+      src: 'src/views/' + this.props.ui.key + '/__navbar.html',
+      dest: 'src/views/navbar.html',
       template: false
     });
 
+    /*
     if (this.props.router.module !== null) {
       this.files.push({
         src: 'src/app/main/__' + this.props.ui.key + '.html',
@@ -19,13 +20,15 @@ module.exports = function (GulpAngularAMDGenerator) {
         template: true
       });
     }
+    */
 
     this.files.push({
-      src: 'src/app/_' + this.props.ui.key + '/__' + this.props.ui.key + '-index.' + this.props.cssPreprocessor.extension,
-      dest: 'src/app/index.' + this.props.cssPreprocessor.extension,
+      src: 'src/styles/' + this.props.ui.key + '/**/*.' + this.props.cssPreprocessor.extension,
+      dest: 'src/' + this.props.cssPreprocessor.extension + '/',
       template: true
     });
 
+    /*
     this.files.push({
       src: 'src/app/components/malarkey/__malarkey.' + this.props.cssPreprocessor.extension,
       dest: 'src/app/components/malarkey/malarkey.' + this.props.cssPreprocessor.extension,
@@ -37,5 +40,6 @@ module.exports = function (GulpAngularAMDGenerator) {
       dest: 'src/app/components/navbar/navbar.' + this.props.cssPreprocessor.extension,
       template: false
     });
+    */
   };
 };

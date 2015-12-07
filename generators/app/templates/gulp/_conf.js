@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  *  This file contains the variables used in other gulp files
  *  which defines tasks
@@ -14,28 +16,14 @@ var gutil = require('gulp-util');
 exports.paths = {
   src: '<%- props.paths.src %>',
   dist: '<%- props.paths.dist %>',
-  tmp: '<%- props.paths.tmp %>',
-  e2e: '<%- props.paths.e2e %>'
-};
-
-/**
- *  Wiredep is the lib which inject bower dependencies in your project
- *  Mainly used to inject script tags in the index.html but also used
- *  to inject css preprocessor deps and js files in karma
- */
-exports.wiredep = {
-<% if(wiredepExclusions.length > 0) { -%>
-  exclude: [<%- wiredepExclusions.join(', ') %>],
-<% } -%>
-  directory: 'bower_components'
+  e2e: '<%- props.paths.e2e %>',
+  tmp: '<%- props.paths.tmp %>'
 };
 
 /**
  *  Common implementation for an error handler of a Gulp plugin
  */
 exports.errorHandler = function(title) {
-  'use strict';
-
   return function(err) {
     gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
     this.emit('end');

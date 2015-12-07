@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 var utils = require('./utils.js');
 
-var pathOptions = ['app-path', 'dist-path', 'e2e-path', 'tmp-path'];
+var pathOptions = ['app-path', 'dist-path', 'e2e-path'];
 
 module.exports = function (GulpAngularAMDGenerator) {
   /**

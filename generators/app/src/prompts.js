@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var chalk = require('chalk');
 var prompts = require('../prompts.json');
+var advancedPrompts = require('../advanced-prompts.json');
 
 var mockPrompts = require('./mock-prompts.js');
 
@@ -80,6 +81,10 @@ module.exports = function (GulpAngularAMDGenerator) {
       return props.ui.key === 'bootstrap';
     };
 
+    _.findWhere(prompts, {name: 'foundationComponents'}).when = function (props) {
+      return props.ui.key === 'foundation';
+    };
+
     this.prompt(prompts, function (props) {
       if (props.ui.key !== 'bootstrap') {
         props.bootstrapComponents = {
@@ -90,7 +95,41 @@ module.exports = function (GulpAngularAMDGenerator) {
         };
       }
 
+      if (props.ui.key !== 'foundation') {
+        props.foundationComponents = {
+          name: null,
+          version: null,
+          key: null,
+          module: null
+        };
+      }
+
       this.props = _.merge(this.props, props);
+
+      done();
+    }.bind(this));
+  };
+
+  /**
+   * If the option is set, ask for advanced questions
+   */
+  GulpAngularAMDGenerator.prototype.askAdvancedQuestions = function askAdvancedQuestions() {
+    this.includeModernizr = false;
+    this.imageMin = false;
+    this.qrCode = false;
+
+    if (this.skipConfig || !this.options.advanced) {
+      return;
+    }
+
+    var done = this.async();
+
+    this.prompt(advancedPrompts, function (props) {
+      this.props.advancedFeatures = props.advancedFeatures;
+
+      this.includeModernizr = this.props.advancedFeatures.indexOf('modernizr') >= 0;
+      this.imageMin = this.props.advancedFeatures.indexOf('imagemin') >= 0;
+      this.qrCode = this.props.advancedFeatures.indexOf('qrcode') >= 0;
 
       done();
     }.bind(this));

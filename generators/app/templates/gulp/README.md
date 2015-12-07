@@ -7,7 +7,7 @@ configuration to gulp tasks through `gulp.paths`.
 ## build.js
 
 Contains the build tasks aiming to optimize all your project and create the dist folder
-- **partials**: compile html partials in one javascript `templateCacheHtml.js`
+- **templates**: compile angular html templates in one javascript `templateCacheHtml.js`
 - **html**: the big one with `useref`, `rev` and `uglify`.
 - **images**: optimize images with imagemin.
 - **fonts**: copy fonts from bower to dist

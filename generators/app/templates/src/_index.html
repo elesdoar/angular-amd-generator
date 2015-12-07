@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<% if (props.jsPreprocessor.srcExtension !== 'es6' && props.jsPreprocessor.key !== 'typescript') { -%>
+<html<% if (includeModernizr) { %> class="no-js"<% } %> ng-app="<%- appName %>">
+<% } else { -%>
+<html<% if (includeModernizr) { %> class="no-js"<% } %> ng-app="<%- appName %>" ng-strict-di>
+<% } -%>
+  <head>
+    <meta charset="utf-8">
+    <title><%- appName %></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <% if (includeModernizr) { -%>
+    <script src="libs/modernizr/modernizr.js"></script>
+    <% } -%>
+
+    <script data-main="js/kudos/main" src="libs/requirejs/require.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <%- routerHtml %>
+  </body>
+</html>
