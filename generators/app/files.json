@@ -3,25 +3,32 @@
     ".bowerrc",
     ".editorconfig",
 
+    "tsconfig.json",
+
     "gulpfile.js",
     "gulp/e2e-tests.js",
 
     "src/favicon.ico",
-    "src/images/yeoman.png",
-    ".jshintrc"
+    "src/images/yeoman.png"
   ],
 
   "templates": [
     ".gitignore",
+    ".eslintrc",
 
     "package.json",
     "bower.json",
+    "tsd.json",
     "README.md",
 
     "gulp/conf.js",
     "gulp/build.js",
     "gulp/inject.js",
     "gulp/styles.js",
+    "gulp/scripts.js",
+
+    "src/js/main.js",
+    "src/js/app.js",
 
     "karma.conf.js",
 
